@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Events | ARES Rocketry</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,8 +17,6 @@
 </head>
 
 <body>
-
-    <!-- Navigation -->
     <header class="header">
         <div class="header__container">
             <a href="/" class="logo">
@@ -50,107 +47,147 @@
     </header>
 
     <main>
-        <section class="section" style="padding-top: 120px;">
+        <section class="section news-page">
             <div class="container">
-                <h1 class="section__title">News and Events</h1>
+                <div class="news-page__intro">
+                    <p class="news-page__eyebrow">Latest from ARES</p>
+                    <h1 class="section__title">News and Events</h1>
+                    <p>Launches, milestones and updates from the team.</p>
+                </div>
 
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <!-- Article 4 -->
-                    <div class="card" style="margin-bottom: 30px; padding: 30px;">
-                        <span style="color: var(--color-secondary); font-weight: bold; font-size: 0.9rem;">IMPORTANT
-                            ANNOUNCEMENT!</span>
-                        <h3 style="margin-top: 10px; font-size: 1.8rem;">ARES to Compete at AURC 2026</h3>
-
-                        <p>
-                            ARES Rocketry will compete in the 10,000ft hybrid category at the Australian Universities
-                            Rocket Competition (AURC) 2026 in White Cliffs, NSW. Held from 30 September to 4 October,
-                            this event will serve as the maiden flight for <strong>Project Odyssey</strong>, our first
-                            hybrid propulsion vehicle.
-                        </p>
-                        <p>
-                            Competing at AURC offers a unique opportunity to demonstrate our new hybrid system alongside
-                            other university teams such as Monash, USyd, and UWS. This milestone represents the
-                            halfway point of our current development cycle and a major leap forward for the team's
-                            technical capabilities.
-                        </p>
-
-                        <div style="margin-top: 20px; display: flex; justify-content: center;">
-                            <img src="../assets/logos/AURClogo.png" alt="AURC Logo"
-                                style="max-width: 400px; width: 100%; height: auto; object-fit: contain;">
+                <div class="news-feed">
+                    <details class="news-story news-story--featured">
+                        <summary class="news-story__summary">
+                            <span class="news-story__summary-copy">
+                                <span class="news-story__meta">Important announcement</span>
+                                <span class="news-story__title">ARES to Compete at AURC 2026</span>
+                                <span class="news-story__excerpt">Project Odyssey is heading to White Cliffs for its
+                                    maiden flight in the 10,000ft hybrid category.</span>
+                                <span class="news-story__action">
+                                    <span class="news-story__action-open">Read full story</span>
+                                    <span class="news-story__action-close">Close story</span>
+                                </span>
+                            </span>
+                            <span class="news-story__feature-art">
+                                <img src="../assets/logos/AURClogo.png" alt="">
+                            </span>
+                            <span class="news-story__toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="news-story__body">
+                            <p>
+                                ARES Rocketry will compete in the 10,000ft hybrid category at the Australian Universities
+                                Rocket Competition (AURC) 2026 in White Cliffs, NSW. Held from 30 September to 4 October,
+                                this event will serve as the maiden flight for <strong>Project Odyssey</strong>, our first
+                                hybrid propulsion vehicle.
+                            </p>
+                            <p>
+                                Competing at AURC offers a unique opportunity to demonstrate our new hybrid system
+                                alongside other university teams such as Monash, USyd, and UWS. This milestone represents
+                                the halfway point of our current development cycle and a major leap forward for the team's
+                                technical capabilities.
+                            </p>
                         </div>
-                    </div>
+                    </details>
 
-                    <!-- Article 5 (L3 Attempt) -->
-                    <div class="card" style="margin-bottom: 30px; padding: 30px;">
-                        <span
-                            style="color: var(--color-secondary); font-weight: bold; font-size: 0.9rem;">12/02/2026</span>
-                        <h3 style="margin-top: 10px; font-size: 1.8rem;">Lachlan Miegel's L3 Preparations
-                        </h3>
-                        <p>
-                            Team Lead <strong>Lachlan Miegel</strong> is currently preparing for his Tripoli Level 3
-                            certification flight, with launch planned for early May. His rocket, <em>SA Great</em>, has
-                            received formal approval from two TRA Technical Advisory Panel members, following submission
-                            of a detailed design and safety report.
-                        </p>
-                        <p>
-                            The 2.55 m tall, 4.5 inch internal diameter carbon fibre airframe will fly on an Aerotech
-                            N3300 motor to approximately 25,000 ft and is designed for transonic and supersonic flight
-                            approaching Mach 2. The vehicle features dual-separation, dual-deploy recovery with two
-                            independent flight computers for redundancy.
-                        </p>
-                    </div>
-                    <!-- Article 3 -->
-                    <div class="card" style="margin-bottom: 30px; padding: 30px;">
-                        <span
-                            style="color: var(--color-secondary); font-weight: bold; font-size: 0.9rem;">08/10/2025</span>
-                        <h3 style="margin-top: 10px; font-size: 1.8rem;">First-Ever Hybrid Engine Hot Fire</h3>
-
-                        <!-- Feature Image -->
-                        <div style="margin: 20px 0;">
-                            <img src="../assets/ARES Photos/Propulsion/propulsion_1.png" alt="Hybrid Engine Hot Fire"
-                                style="width: 100%; height: auto; border-radius: 8px; object-fit: cover; max-height: 400px;">
+                    <details class="news-story news-story--compact">
+                        <summary class="news-story__summary">
+                            <span class="news-story__summary-copy">
+                                <span class="news-story__meta">12/02/2026</span>
+                                <span class="news-story__title">Lachlan Miegel's L3 Preparations</span>
+                                <span class="news-story__excerpt">A carbon fibre vehicle, a 25,000ft target and the next
+                                    step toward Tripoli Level 3 certification.</span>
+                                <span class="news-story__action">
+                                    <span class="news-story__action-open">Read full story</span>
+                                    <span class="news-story__action-close">Close story</span>
+                                </span>
+                            </span>
+                            <span class="news-story__toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="news-story__body">
+                            <p>
+                                Team Lead <strong>Lachlan Miegel</strong> is currently preparing for his Tripoli Level 3
+                                certification flight, with launch planned for early May. His rocket, <em>SA Great</em>, has
+                                received formal approval from two TRA Technical Advisory Panel members, following
+                                submission of a detailed design and safety report.
+                            </p>
+                            <p>
+                                The 2.55 m tall, 4.5 inch internal diameter carbon fibre airframe will fly on an Aerotech
+                                N3300 motor to approximately 25,000 ft and is designed for transonic and supersonic flight
+                                approaching Mach 2. The vehicle features dual-separation, dual-deploy recovery with two
+                                independent flight computers for redundancy.
+                            </p>
                         </div>
+                    </details>
 
-                        <p>
-                            ARES has successfully completed its first-ever hybrid engine hot fire, marking a major
-                            milestone for the team’s propulsion program. Following a successful cold flow test, the team
-                            ignited the motor on the first attempt, delivering a strong, stable burn and validating the
-                            full ground support system.
-                        </p>
-                        <p>
-                            After extensive troubleshooting, the hot fire was achieved mid-afternoon, demonstrating the
-                            viability of the hybrid configuration and in-house procedures. This achievement positions
-                            the team strongly for continued development over the summer.
-                        </p>
-                        <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-                            <img src="../assets/ARES Photos/Propulsion/test_stand_side.jpeg" alt="Test Stand Side View"
-                                style="flex: 1; min-width: 200px; border-radius: 8px; object-fit: cover;">
-                            <img src="../assets/ARES Photos/Propulsion/jack_daq.jpeg" alt="DAQ Setup"
-                                style="flex: 1; min-width: 200px; border-radius: 8px; object-fit: cover;">
+                    <details class="news-story news-story--compact">
+                        <summary class="news-story__summary">
+                            <span class="news-story__summary-copy">
+                                <span class="news-story__meta">08/10/2025</span>
+                                <span class="news-story__title">First-Ever Hybrid Engine Hot Fire</span>
+                                <span class="news-story__excerpt">A strong, stable burn validates the team's hybrid motor
+                                    and ground support system.</span>
+                                <span class="news-story__action">
+                                    <span class="news-story__action-open">Read full story</span>
+                                    <span class="news-story__action-close">Close story</span>
+                                </span>
+                            </span>
+                            <span class="news-story__toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="news-story__body">
+                            <img class="news-story__hero-image"
+                                src="../assets/ARES Photos/Propulsion/propulsion_1.png"
+                                alt="Hybrid engine firing on the ARES test stand">
+                            <p>
+                                ARES has successfully completed its first-ever hybrid engine hot fire, marking a major
+                                milestone for the team's propulsion program. Following a successful cold flow test, the
+                                team ignited the motor on the first attempt, delivering a strong, stable burn and
+                                validating the full ground support system.
+                            </p>
+                            <p>
+                                After extensive troubleshooting, the hot fire was achieved mid-afternoon, demonstrating
+                                the viability of the hybrid configuration and in-house procedures. This achievement
+                                positions the team strongly for continued development over the summer.
+                            </p>
+                            <div class="news-story__gallery">
+                                <img src="../assets/ARES Photos/Propulsion/test_stand_side.jpeg"
+                                    alt="Hybrid engine test stand from the side">
+                                <img src="../assets/ARES Photos/Propulsion/jack_daq.jpeg"
+                                    alt="Data acquisition setup used during the engine test">
+                            </div>
                         </div>
-                    </div>
+                    </details>
 
-                    <!-- Article 1 -->
-                    <div class="card" style="margin-bottom: 30px; padding: 30px;">
-                        <span
-                            style="color: var(--color-secondary); font-weight: bold; font-size: 0.9rem;">06/09/2025</span>
-                        <h3 style="margin-top: 10px; font-size: 1.8rem;">Successful Launch at Serpentine!</h3>
-                        <p>
-                            Massive congratulations to <strong>Auriella Fisher</strong> for earning an L1 certification
-                            last weekend! Flying on a H100 and hitting 3000 feet, Auriella tested a custom GPS system
-                            which proved to be a success.
-                        </p>
-                        <p>
-                            Another congratulations are in store to <strong>Lachlan Miegel</strong> for flying his L2
-                            rocket ‘Lemini’ not once, but twice, hitting 3800ft both times on J435 motors. Earning him
-                            his L2
-                            certification, this marks a crucial step forward for Lachlan in gaining an L3 certification.
-                        </p>
-                        <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-                            <img src="../assets/ARES Photos/news_posts/leminiScale.jpeg" alt="Lemini Rocket Scale"
-                                style="flex: 1; min-width: 250px; border-radius: 8px; object-fit: cover;">
+                    <details class="news-story news-story--compact">
+                        <summary class="news-story__summary">
+                            <span class="news-story__summary-copy">
+                                <span class="news-story__meta">06/09/2025</span>
+                                <span class="news-story__title">Successful Launch at Serpentine!</span>
+                                <span class="news-story__excerpt">Two certification milestones and a successful custom GPS
+                                    test during a busy launch weekend.</span>
+                                <span class="news-story__action">
+                                    <span class="news-story__action-open">Read full story</span>
+                                    <span class="news-story__action-close">Close story</span>
+                                </span>
+                            </span>
+                            <span class="news-story__toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="news-story__body">
+                            <p>
+                                Massive congratulations to <strong>Auriella Fisher</strong> for earning an L1
+                                certification last weekend! Flying on a H100 and hitting 3000 feet, Auriella tested a
+                                custom GPS system which proved to be a success.
+                            </p>
+                            <p>
+                                Another congratulations are in store to <strong>Lachlan Miegel</strong> for flying his L2
+                                rocket <em>Lemini</em> not once, but twice, hitting 3800ft both times on J435 motors.
+                                Earning him his L2 certification, this marks a crucial step forward for Lachlan in gaining
+                                an L3 certification.
+                            </p>
+                            <img class="news-story__hero-image"
+                                src="../assets/ARES Photos/news_posts/leminiScale.jpeg"
+                                alt="Lemini rocket displayed beside a scale reference">
                         </div>
-                    </div>
+                    </details>
                 </div>
             </div>
         </section>
