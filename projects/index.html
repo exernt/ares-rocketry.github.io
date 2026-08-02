@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Monda:wght@400;700&display=swap"
         rel="stylesheet">
 
     <!-- Main Stylesheet -->
@@ -54,6 +54,8 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 10px 20px;
             border-radius: 20px;
+            color: inherit;
+            font: inherit;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
@@ -227,12 +229,20 @@
             <button class="nav-toggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../about/" class="nav__link">About Us</a></li>
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="../about/" class="nav__link" aria-haspopup="true">About Us</a>
+                        <ul class="nav__dropdown" aria-label="About Us submenu">
+                            <li><a href="../timeline/" class="nav__dropdown-link">Timeline</a></li>
+                            <li><a href="../news/" class="nav__dropdown-link">News</a></li>
+                            <li><a href="../gallery/" class="nav__dropdown-link">Gallery</a></li>
+                        </ul>
+                    </li>
                     <li class="nav__item"><a href="../team/" class="nav__link">Team</a></li>
                     <li class="nav__item"><a href="../sponsors/" class="nav__link">Sponsors</a></li>
                     <li class="nav__item"><a href="../projects/" class="nav__link active">Projects</a></li>
-                    <li class="nav__item"><a href="../news/" class="nav__link">News</a></li>
-                    <li class="nav__item"><a href="../gallery/" class="nav__link">Gallery</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../timeline/" class="nav__link">Timeline</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../news/" class="nav__link">News</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../gallery/" class="nav__link">Gallery</a></li>
                     <li class="nav__item"><a href="../join/" class="nav__link btn btn--primary">Join Us</a></li>
                 </ul>
             </nav>
@@ -249,18 +259,25 @@
 
         <section class="section projects">
             <div class="container">
-                <div class="timeline-nav">
-                    <div class="timeline-item active" onclick="showProject('odyssey')">Odyssey</div>
-                    <div class="timeline-item" onclick="showProject('lemaire')">Lemaire</div>
-                    <div class="timeline-item" onclick="showProject('florence')">Florence</div>
-                    <div class="timeline-item" onclick="showProject('deimos')">Deimos</div>
-                    <div class="timeline-item" onclick="showProject('phobos')">Phobos</div>
-                    <div class="timeline-item" onclick="showProject('bigblue')">Big Blue</div>
+                <div class="timeline-nav" role="tablist" aria-label="Rocket missions">
+                    <button type="button" id="tab-odyssey" class="timeline-item active" role="tab"
+                        aria-selected="true" aria-controls="odyssey">Odyssey</button>
+                    <button type="button" id="tab-lemaire" class="timeline-item" role="tab"
+                        aria-selected="false" aria-controls="lemaire" tabindex="-1">Lemaire</button>
+                    <button type="button" id="tab-florence" class="timeline-item" role="tab"
+                        aria-selected="false" aria-controls="florence" tabindex="-1">Florence</button>
+                    <button type="button" id="tab-deimos" class="timeline-item" role="tab"
+                        aria-selected="false" aria-controls="deimos" tabindex="-1">Deimos</button>
+                    <button type="button" id="tab-phobos" class="timeline-item" role="tab"
+                        aria-selected="false" aria-controls="phobos" tabindex="-1">Phobos</button>
+                    <button type="button" id="tab-bigblue" class="timeline-item" role="tab"
+                        aria-selected="false" aria-controls="bigblue" tabindex="-1">Big Blue</button>
                 </div>
 
                 <div class="project-display">
                     <!-- Odyssey -->
-                    <div id="odyssey" class="project-content active">
+                    <div id="odyssey" class="project-content active" role="tabpanel" aria-labelledby="tab-odyssey"
+                        tabindex="0">
                         <div class="project-hero">
                             <img src="../assets/thumbnails/Propulsion/propulsion_1.png" alt="Project Odyssey Hotfire">
                             <div class="project-hero-overlay">
@@ -286,7 +303,8 @@
                     </div>
 
                     <!-- Lemaire -->
-                    <div id="lemaire" class="project-content">
+                    <div id="lemaire" class="project-content" role="tabpanel" aria-labelledby="tab-lemaire"
+                        tabindex="0" hidden>
                         <div class="project-hero">
                             <img src="../assets/thumbnails/Teams Photos/Lemaire.JPG" alt="Project Lemaire Team">
                             <div class="project-hero-overlay">
@@ -314,7 +332,8 @@
                     </div>
 
                     <!-- Florence -->
-                    <div id="florence" class="project-content">
+                    <div id="florence" class="project-content" role="tabpanel" aria-labelledby="tab-florence"
+                        tabindex="0" hidden>
                         <div class="project-hero">
                             <img src="../assets/thumbnails/lemwhitesands.JPG" alt="Project Florence">
                             <div class="project-hero-overlay">
@@ -347,7 +366,8 @@
                     </div>
 
                     <!-- Deimos -->
-                    <div id="deimos" class="project-content">
+                    <div id="deimos" class="project-content" role="tabpanel" aria-labelledby="tab-deimos"
+                        tabindex="0" hidden>
                         <div class="project-hero">
                             <img src="../assets/thumbnails/Deimos/Deimos_dessert.jpeg" alt="Project Deimos in desert">
                             <div class="project-hero-overlay">
@@ -374,7 +394,8 @@
                     </div>
 
                     <!-- Phobos -->
-                    <div id="phobos" class="project-content">
+                    <div id="phobos" class="project-content" role="tabpanel" aria-labelledby="tab-phobos"
+                        tabindex="0" hidden>
                         <div class="project-hero">
                             <img src="../assets/thumbnails/SAC22.JPG" alt="Phobos at SAC 2022">
                             <div class="project-hero-overlay">
@@ -403,7 +424,8 @@
                     </div>
 
                     <!-- Big Blue -->
-                    <div id="bigblue" class="project-content">
+                    <div id="bigblue" class="project-content" role="tabpanel" aria-labelledby="tab-bigblue"
+                        tabindex="0" hidden>
                         <div class="project-hero">
                             <img src="../assets/thumbnails/bigBlueLaunch.jpg" alt="Big Blue rocket">
                             <div class="project-hero-overlay">
@@ -468,17 +490,44 @@
 
     <script src="../script.js"></script>
     <script>
-        function showProject(id) {
-            // Hide all projects
-            document.querySelectorAll('.project-content').forEach(p => p.classList.remove('active'));
-            // Remove active class from all nav items
-            document.querySelectorAll('.timeline-item').forEach(i => i.classList.remove('active'));
+        const projectTabs = Array.from(document.querySelectorAll('[role="tab"]'));
+        const projectPanels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
 
-            // Show selected project
-            document.getElementById(id).classList.add('active');
-            // Add active class to clicked nav item
-            event.currentTarget.classList.add('active');
+        function showProject(tab, moveFocus = false) {
+            const panelId = tab.getAttribute('aria-controls');
+
+            projectTabs.forEach(item => {
+                const isSelected = item === tab;
+                item.classList.toggle('active', isSelected);
+                item.setAttribute('aria-selected', String(isSelected));
+                item.tabIndex = isSelected ? 0 : -1;
+            });
+
+            projectPanels.forEach(panel => {
+                const isSelected = panel.id === panelId;
+                panel.classList.toggle('active', isSelected);
+                panel.hidden = !isSelected;
+            });
+
+            if (moveFocus) tab.focus();
         }
+
+        projectTabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => showProject(tab));
+            tab.addEventListener('keydown', event => {
+                let nextIndex;
+
+                if (event.key === 'ArrowRight') nextIndex = (index + 1) % projectTabs.length;
+                if (event.key === 'ArrowLeft') nextIndex = (index - 1 + projectTabs.length) % projectTabs.length;
+                if (event.key === 'Home') nextIndex = 0;
+                if (event.key === 'End') nextIndex = projectTabs.length - 1;
+
+                if (nextIndex !== undefined) {
+                    event.preventDefault();
+                    showProject(projectTabs[nextIndex], true);
+                }
+            });
+        });
     </script>
 </body>
 

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Monda:wght@400;700&display=swap"
         rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -109,12 +109,20 @@
             <button class="nav-toggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../about/" class="nav__link">About Us</a></li>
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="../about/" class="nav__link" aria-haspopup="true">About Us</a>
+                        <ul class="nav__dropdown" aria-label="About Us submenu">
+                            <li><a href="../timeline/" class="nav__dropdown-link">Timeline</a></li>
+                            <li><a href="../news/" class="nav__dropdown-link">News</a></li>
+                            <li><a href="../gallery/" class="nav__dropdown-link">Gallery</a></li>
+                        </ul>
+                    </li>
                     <li class="nav__item"><a href="../team/" class="nav__link active">Team</a></li>
                     <li class="nav__item"><a href="../sponsors/" class="nav__link">Sponsors</a></li>
                     <li class="nav__item"><a href="../projects/" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="../news/" class="nav__link">News</a></li>
-                    <li class="nav__item"><a href="../gallery/" class="nav__link">Gallery</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../timeline/" class="nav__link">Timeline</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../news/" class="nav__link">News</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../gallery/" class="nav__link">Gallery</a></li>
                     <li class="nav__item"><a href="../join/" class="nav__link btn btn--primary">Join Us</a></li>
                 </ul>
             </nav>
@@ -125,6 +133,7 @@
         <!-- Leadership Section -->
         <section class="section">
             <div class="container">
+                <h1 class="section__title">Our Team</h1>
                 <h2 class="section__title">Leadership</h2>
                 <div class="grid-4-col" style="margin-bottom: 60px;">
                     <div class="team-card">

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Monda:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -30,12 +30,20 @@
             <button class="nav-toggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../about/" class="nav__link active">About Us</a></li>
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="../about/" class="nav__link active" aria-haspopup="true">About Us</a>
+                        <ul class="nav__dropdown" aria-label="About Us submenu">
+                            <li><a href="../timeline/" class="nav__dropdown-link">Timeline</a></li>
+                            <li><a href="../news/" class="nav__dropdown-link">News</a></li>
+                            <li><a href="../gallery/" class="nav__dropdown-link">Gallery</a></li>
+                        </ul>
+                    </li>
                     <li class="nav__item"><a href="../team/" class="nav__link">Team</a></li>
                     <li class="nav__item"><a href="../sponsors/" class="nav__link">Sponsors</a></li>
                     <li class="nav__item"><a href="../projects/" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="../news/" class="nav__link">News</a></li>
-                    <li class="nav__item"><a href="../gallery/" class="nav__link">Gallery</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../timeline/" class="nav__link">Timeline</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../news/" class="nav__link">News</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="../gallery/" class="nav__link">Gallery</a></li>
                     <li class="nav__item"><a href="../join/" class="nav__link btn btn--primary">Join Us</a></li>
                 </ul>
             </nav>
@@ -47,7 +55,7 @@
             <div class="container">
                 <div class="about__grid">
                     <div class="about__content">
-                        <h2 class="section__title">About Us</h2>
+                        <h1 class="section__title">About Us</h1>
                         <p>
                             Founded in 2019, the Aerospace Rocketry and Engineering Society (ARES) is an award-winning
                             student rocketry team based at The University of Melbourne. One of the most prestigious
@@ -100,119 +108,6 @@
             </div>
         </section>
 
-        <!-- Team History Timeline Section (Migrated) -->
-        <section class="section" style="background: var(--color-white); padding: 80px 0;">
-            <div class="container">
-                <h2 class="section__title" style="text-align: center; margin-bottom: 60px;">Team History & Achievements
-                </h2>
-
-                <div class="history-timeline-container">
-                    <div class="history-timeline-entry left animate-on-scroll">
-                        <div class="history-content">
-                            <h3>2019</h3>
-                            <p>ARES is established and plans to participate in the Australian Universities Rocketry
-                                Competition (AURC). Club activity is largely stalled due to the COVID-19 pandemic, but
-                                continues researching for future development.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image right animate-on-scroll">
-                        <img src="../assets/thumbnails/bigBlueLaunch.jpg" alt="Big Blue rocket">
-                    </div>
-                    <div class="history-timeline-entry right animate-on-scroll">
-                        <div class="history-content">
-                            <h3>2022</h3>
-                            <p>ARES launches our first team rocket 'Big Blue.'</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image left animate-on-scroll">
-                        <img src="../assets/thumbnails/SAC22.JPG" alt="SAC 2022">
-                    </div>
-                    <div class="history-timeline-entry left animate-on-scroll">
-                        <div class="history-content">
-                            <h3>2022</h3>
-                            <p>ARES attends the Spaceport America Cup (SAC) competition in New Mexico, Texas with our
-                                10,000ft rocket 'Phobos.' We win the <strong>Charles Hoult Award for Modelling &
-                                    Simulation</strong> out of 110 teams from across the world.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image right animate-on-scroll">
-                        <img src="../assets/thumbnails/Deimos/Deimos_dessert.jpeg" alt="Deimos in desert">
-                    </div>
-                    <div class="history-timeline-entry right animate-on-scroll">
-                        <div class="history-content">
-                            <h3>2023</h3>
-                            <p>ARES launches our first-ever 30,000ft rocket at SAC. We presented at the 2023 Podium
-                                Session and showed our work on the 'SRAD future-proof flight computer'.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image left animate-on-scroll">
-                        <img src="../assets/thumbnails/florence_awards.jpeg" alt="Florence awards ceremony">
-                    </div>
-                    <div class="history-timeline-entry left animate-on-scroll">
-                        <div class="history-content">
-                            <h3>2024</h3>
-                            <p>ARES launches our award-winning rocket Florence at SAC. Florence reaches an apogee of
-                                29,782 feet.</p>
-                            <p><strong>Awards:</strong> 2nd Place (30k COTS), 4th Place Overall (out of 152 teams), 3rd
-                                Place SDL Payload Competition.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image right animate-on-scroll">
-                        <img src="../assets/thumbnails/lemaire_launch_team.JPG" alt="Integration work">
-                    </div>
-                    <div class="history-timeline-entry right animate-on-scroll">
-                        <div class="history-content">
-                            <h3>2025</h3>
-                            <p>Building on the successes of Florence, ARES launched their newest rocket to date
-                                'Lemaire' at IREC in Spaceport Midland, Texas. Lemaire reached an inertial apogee of
-                                30,001ft and an altimeter apogee of 28,460ft. The rocket touched-down under drogue, and
-                                was able to be recovered with minimal damage.</p>
-                            <p>After an exciting cycle, ARES has decided to switch to a two-year project cycle, aiming
-                                to develop a hybrid engine rocket.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image left animate-on-scroll">
-                        <img src="../assets/thumbnails/launch.jpeg" alt="Lemaire team">
-                    </div>
-
-                    
-                    <div class="history-timeline-entry left future animate-on-scroll">
-                        <div class="history-content">
-                            <h3>Early 2026</h3>
-                            <p>ARES successfully completed it's second hot fire of the sub-scale hybrid engine.
-                                This was a tremendous effort by the team to safely gain critical experience and
-                                refine operational procedures.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image right animate-on-scroll">
-                        <img src="../assets/thumbnails/hotfire.jpeg" alt="Lemaire team">
-                    </div>
-                    <div class="history-timeline-entry right future animate-on-scroll">
-                        <div class="history-content">
-                            <h3>Mid 2026</h3>
-                            <p>The first full scale hot fire is planned to take place in early August 2026.Full-scale static
-                                fires will validate engine performance and integration with the complete rocket system. The
-                                airframe of Odyssey is in it's final form, and each sub-system is undergoing rigorous testing
-                                to prepare for AURC.</p>
-                        </div>
-                    </div>
-
-                    
-                    <!-- Future Events -->
-                    <div class="history-timeline-entry left future animate-on-scroll">
-                        <div class="history-content">
-                            <h3>Late 2026</h3>
-                            <p><strong>Planned:</strong> ARES will compete in the 10,000ft hybrid category at AURC 2026
-                                in White Cliffs, NSW. This event marks the maiden flight of Project Odyssey and a major
-                                milestone in our hybrid propulsion program.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image right animate-on-scroll">
-                        <img src="../assets/logos/AURClogo.png" alt="AURC Logo">
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">

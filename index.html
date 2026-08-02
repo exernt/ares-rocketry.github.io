@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Monda:wght@400;700&display=swap"
         rel="stylesheet">
 
     <!-- Main Stylesheet -->
@@ -46,12 +46,20 @@
             <button class="nav-toggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="about/" class="nav__link">About Us</a></li>
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="about/" class="nav__link" aria-haspopup="true">About Us</a>
+                        <ul class="nav__dropdown" aria-label="About Us submenu">
+                            <li><a href="timeline/" class="nav__dropdown-link">Timeline</a></li>
+                            <li><a href="news/" class="nav__dropdown-link">News</a></li>
+                            <li><a href="gallery/" class="nav__dropdown-link">Gallery</a></li>
+                        </ul>
+                    </li>
                     <li class="nav__item"><a href="team/" class="nav__link">Team</a></li>
                     <li class="nav__item"><a href="sponsors/" class="nav__link">Sponsors</a></li>
                     <li class="nav__item"><a href="projects/" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="news/" class="nav__link">News</a></li>
-                    <li class="nav__item"><a href="gallery/" class="nav__link">Gallery</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="timeline/" class="nav__link">Timeline</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="news/" class="nav__link">News</a></li>
+                    <li class="nav__item nav__item--mobile-only"><a href="gallery/" class="nav__link">Gallery</a></li>
                     <li class="nav__item"><a href="join/" class="nav__link btn btn--primary">Join Us</a></li>
                 </ul>
             </nav>
@@ -60,21 +68,25 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="hero__background"></div>
+        <section id="hero" class="hero" data-parallax data-parallax-speed="0.12">
+            <div class="hero__background parallax-background" aria-hidden="true"></div>
             <div class="container hero__container">
-                <div class="hero__logo">
-                    <img src="assets/ares-logo.png" alt="ARES Logo" class="hero__logo-img">
-                </div>
                 <div class="hero__content">
-                    <p class="hero__subtitle hero-animate delay-100">
+                    <h1 class="hero__subtitle hero-animate delay-100">
                         Pushing the boundaries of student aerospace engineering at the University of Melbourne.
-                    </p>
+                    </h1>
                     <div class="hero__actions">
-                        <a href="join/" class="btn btn--primary hero-animate delay-200">Join the Mission</a>
-                        <a href="about/" class="btn btn--outline hero-animate delay-300">Learn More</a>
+                        <a href="about/" class="btn btn--outline hero-animate delay-200">Learn More</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="home-feature" aria-label="ARES Rocketry history" data-parallax data-parallax-speed="0.12">
+            <div class="home-feature__background parallax-background" aria-hidden="true"></div>
+            <div class="container home-feature__content">
+                <p class="home-feature__text">Since 2019...</p>
+                <a href="join/" class="btn btn--primary home-feature__button">Join the Team</a>
             </div>
         </section>
     </main>

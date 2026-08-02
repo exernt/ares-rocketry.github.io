@@ -10,8 +10,8 @@
     --color-text-muted: #555555;
 
     /* Typography */
-    --font-heading: 'Fraunces', serif;
-    --font-body: 'Source Sans Pro', sans-serif;
+    --font-heading: 'Monda', sans-serif;
+    --font-body: 'IBM Plex Mono', monospace;
 
     /* Spacing */
     --spacing-sm: 8px;
@@ -155,7 +155,7 @@ p {
 }
 
 .logo__img {
-    height: 60px;
+    height: 80px;
     width: auto;
     display: block;
     border-radius: 0;
@@ -165,7 +165,6 @@ p {
     padding: 0;
     /* remove badge padding */
 }
-
 
 /* Header brand group - not used in new design */
 .header__brand-group {
@@ -226,6 +225,99 @@ p {
 
 .nav__link.btn:hover {
     background: #fff;
+}
+
+/* Desktop header navigation. */
+@media (min-width: 769px) {
+    .nav {
+        flex: 1;
+        margin-left: var(--spacing-md);
+    }
+
+    .nav__list {
+        width: 100%;
+    }
+
+    .nav__item:last-child {
+        margin-left: auto;
+    }
+
+    .nav__item:last-child .nav__link.btn {
+        margin-left: 0;
+    }
+
+    .nav__item--mobile-only {
+        display: none;
+    }
+
+    .nav__item--dropdown {
+        position: relative;
+    }
+
+    .nav__item--dropdown > .nav__link::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        margin-left: 8px;
+        border-right: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+        transform: translateY(-2px) rotate(45deg);
+    }
+
+    .nav__dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 180px;
+        padding: var(--spacing-xs) 0;
+        background: var(--color-primary);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-6px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    }
+
+    .nav__item--dropdown:hover .nav__dropdown,
+    .nav__item--dropdown:focus-within .nav__dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav__dropdown-link {
+        display: block;
+        padding: 12px var(--spacing-md);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .nav__dropdown-link:hover,
+    .nav__dropdown-link:focus-visible {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--color-white);
+    }
+
+    .nav__dropdown-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--color-white);
+        box-shadow: inset 2px 0 var(--color-secondary);
+    }
+}
+
+.nav__dropdown {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .nav__dropdown {
+        display: block;
+    }
 }
 
 /* Mobile Nav Toggle */
@@ -312,13 +404,26 @@ p {
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(rgba(0, 15, 70, 0.8), rgba(0, 15, 70, 0.6)), url('assets/ARES Photos/clean_florence.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    overflow: hidden;
     color: var(--color-white);
     margin-top: -70px;
     padding-top: 70px;
+}
+
+.parallax-background {
+    position: absolute;
+    inset: -18%;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: translate3d(0, var(--parallax-y, 0), 0);
+    will-change: transform;
+}
+
+.hero__background {
+    background-image: linear-gradient(rgba(0, 15, 70, 0.8), rgba(0, 15, 70, 0.6)), url('assets/ARES Photos/clean_florence.png');
 }
 
 .hero__container {
@@ -327,6 +432,8 @@ p {
     justify-content: space-between;
     gap: var(--spacing-xl);
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .hero__content {
@@ -364,6 +471,82 @@ p {
 .hero__actions {
     display: flex;
     gap: var(--spacing-md);
+}
+
+.home-page .hero__container {
+    justify-content: center;
+}
+
+.home-page .hero__content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-page .hero__subtitle {
+    font-size: 3.5rem;
+    line-height: 1.25;
+    font-family: var(--font-body);
+}
+
+.home-page .home-feature__text {
+    font-size: 2.8rem;
+    line-height: 1.25;
+}
+
+.home-page .hero__actions {
+    justify-content: center;
+}
+
+.home-feature {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-white);
+}
+
+.home-feature__background {
+    background-image: linear-gradient(rgba(25, 25, 25, 0.82), rgba(50, 50, 50, 0.68)), url('assets/ARES Photos/Propulsion/hotfire.jpeg');
+}
+
+.home-feature__content {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.home-feature__text {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+.home-feature__button {
+    margin-top: var(--spacing-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .parallax-background {
+        transform: none;
+        will-change: auto;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* About Section */
@@ -573,27 +756,29 @@ p {
 }
 
 /* Footer */
-/* Footer */
 .footer {
     background: #000a2e;
     /* Darker Navy */
     color: var(--color-white);
-    padding: 20px 0;
+    padding: 16px 0;
 }
 
 .footer__container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: var(--spacing-lg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
     max-width: none;
+    min-height: 80px;
     width: 100%;
     padding: 0 40px;
+    position: relative;
 }
 
 .footer__copyright {
-    align-self: flex-end;
-    flex: 1;
+    order: 2;
+    text-align: center;
 }
 
 .footer__copyright p {
@@ -606,6 +791,7 @@ p {
     display: flex;
     gap: 20px;
     align-items: center;
+    order: 1;
     flex-shrink: 0;
 }
 
@@ -625,7 +811,9 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    flex: 1;
+    position: absolute;
+    right: 40px;
+    bottom: 0;
 }
 
 .footer__logo img {
@@ -767,7 +955,7 @@ p {
     }
 
     .nav.nav--open {
-        max-height: 300px;
+        max-height: 450px;
     }
 
     .nav__list {
@@ -887,6 +1075,12 @@ p {
 }
 
 .gallery-item {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    text-align: left;
     break-inside: avoid;
     margin-bottom: 20px;
     position: relative;
@@ -895,6 +1089,13 @@ p {
     border-radius: 8px;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:focus-visible,
+.lightbox-close:focus-visible,
+.timeline-item:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 3px;
 }
 
 .gallery-item img {
@@ -963,6 +1164,15 @@ p {
 
 /* Footer mobile adjustments - inside existing @media (max-width: 768px) */
 @media (max-width: 768px) {
+    .home-page .hero__subtitle {
+        font-size: clamp(2rem, 10vw, 2.75rem);
+        line-height: 1.2;
+    }
+
+    .home-page .home-feature__text {
+        font-size: clamp(1.75rem, 8vw, 2.4rem);
+    }
+
     .footer__container {
         flex-direction: column;
         gap: var(--spacing-md);
@@ -980,6 +1190,7 @@ p {
     .footer__logo {
         order: 3;
         justify-content: center;
+        position: static;
     }
 }
 

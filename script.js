@@ -72,6 +72,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update on scroll
         window.addEventListener('scroll', updateHeaderBackground);
+
+        // Move homepage background layers at a fraction of the document scroll speed.
+        const parallaxSections = document.querySelectorAll('[data-parallax]');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let parallaxFrame = null;
+
+        function updateParallax() {
+            const viewportCenter = window.innerHeight / 2;
+
+            parallaxSections.forEach(section => {
+                const bounds = section.getBoundingClientRect();
+
+                if (bounds.bottom < 0 || bounds.top > window.innerHeight) return;
+
+                const sectionCenter = bounds.top + (bounds.height / 2);
+                const speed = Number(section.dataset.parallaxSpeed) || 0.12;
+                const offset = (viewportCenter - sectionCenter) * speed;
+
+                section.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`);
+            });
+
+            parallaxFrame = null;
+        }
+
+        function requestParallaxUpdate() {
+            if (parallaxFrame === null) {
+                parallaxFrame = window.requestAnimationFrame(updateParallax);
+            }
+        }
+
+        if (!reducedMotion.matches && parallaxSections.length > 0) {
+            updateParallax();
+            window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+            window.addEventListener('resize', requestParallaxUpdate);
+        }
     }
 
     // --- Animation Initialization ---
